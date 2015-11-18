@@ -1,17 +1,25 @@
 [user]
 	name = Eric Weigle
 	email = eric.weigle@gmail.com
-[diff]
-	external = /home/$USER/bin/git_meld
 [alias]
 	pu = !"git fetch origin -v; git fetch upstream -v; git merge upstream/master"
 [credential]
 	helper = cache
-[merge]
-	tool = meld2
 [push]
 	default = simple
-[mergetool "meld2"]
-	cmd = /home/$USER/bin/git_mergetool \\\"$BASE\\\" \\\"$LOCAL\\\" \\\"$REMOTE\\\" \\\"$MERGED\\\"
 [core]
 	editor = vim
+
+# GUIs
+#[diff]
+#	external = /home/$USER/bin/git_meld
+#[merge]
+#	tool = meld2
+#[mergetool "meld2"]
+#	cmd = /home/$USER/bin/git_mergetool \\\"$BASE\\\" \\\"$LOCAL\\\" \\\"$REMOTE\\\" \\\"$MERGED\\\"
+
+# CLI's
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
