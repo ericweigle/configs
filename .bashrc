@@ -8,7 +8,7 @@
 export EDITOR=/usr/bin/vim
 
 # don't put duplicate lines in the history. See bash(1) for more options
-export HISTCONTROL=ignoredups
+#export HISTCONTROL=ignoredups
 # ... and ignore same sucessive entries.
 export HISTCONTROL=ignoreboth
 
@@ -87,4 +87,7 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
-setxkbmap -option "ctrl:nocaps"
+# If running X locally, mess with keyboard settings
+if [ -f /usr/bin/setxkbmap ]; then
+    setxkbmap -option "ctrl:nocaps"
+fi
